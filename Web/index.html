@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="main">
+      <div id="panel">
+          <div id="ptop">
+            <div id="elem">
+              <h3>score</h3>
+              <div class="box"></div></div>
+            <div id="elem">
+              <h3>score</h3>
+              <div class="box"></div></div>
+            <div id="elem">
+              <h3>score</h3>
+              <div class="box">
+                <h3></h3>
+              </div></div>
+          </div>
+          <div id="pbtm">
+            <div class="circle"><h5>HI</h5></div>
+          </div>
+      </div>
+   
+    </div>
+    <script>
+      // Get the reference to the existing div element
+      var parentContainer = document.getElementById("pbtm");
+      var originalDiv = document.querySelector(".circle");
+
+// Loop to create 50 copies of the original div
+for (var i = 0; i < 53; i++) {
+    // Clone the original div
+    var clonedDiv = originalDiv.cloneNode(true);
+    clonedDiv.addEventListener("click", function(){
+    
+      this.innerText="Hey";
+      var randomRed = Math.floor(Math.random() * 256);
+        var randomGreen = Math.floor(Math.random() * 256);
+        var randomBlue = Math.floor(Math.random() * 256);
+
+        // Construct the random color string
+        var randomColor = "rgb(" + randomRed + ", " + randomGreen + ", " + randomBlue + ")";
+
+        // Change the background color of the cloned circle to the random color
+        this.style.backgroundColor = randomColor;
+    })
+     
+    // Optionally, modify attributes or content of the cloned div if needed
+
+    // Append the cloned div to the body or any other parent element
+    parentContainer.appendChild(clonedDiv);
+}
+
+    </script>
+</body>
+</html>
